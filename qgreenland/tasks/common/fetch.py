@@ -40,6 +40,7 @@ class FetchCmrGranule(luigi.Task):
 class FetchDataFiles(luigi.Task):
     source_cfg = luigi.DictParameter()
     output_name = luigi.Parameter()
+    override_fetch_filename = luigi.Parameter(default=None)
 
     def output(self):
         return luigi.LocalTarget(
@@ -56,8 +57,12 @@ class FetchDataFiles(luigi.Task):
             for url in self.source_cfg['urls']:
                 resp = fetch_file(url)
 
-                url_slash_index = resp.url.rfind('/')
-                fn = resp.url[url_slash_index + 1:]
+                if self.override_fetch_filename is not None:
+                    fn = self.override_fetch_filename
+                else:
+                    url_slash_index = resp.url.rfind('/')
+                    fn = resp.url[url_slash_index + 1:]
+
                 fp = os.path.join(temp_path, fn)
 
                 with open(fp, 'wb') as f:

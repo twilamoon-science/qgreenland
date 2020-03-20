@@ -1,3 +1,22 @@
+- id: mineral_occurrences
+  access_method: http
+  sources:
+    - id: only
+      # TODO add `whoami` param w/ email. GEUS requests that users of their
+      # services provide this so that they an provide feedback if
+      # necessary. Requests omitting this param may be refused or
+      # rate-limited. See:
+      # http://maps.greenmin.gl/geusmap/ows/help/?mapname=greenland_portal&epsg=32624
+      urls:
+        - 'http://maps.greenmin.gl/geusmap/ows/32624.jsp?nocache=nocache&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&LAYERS=mineral_occurrences&TYPENAME=mineral_occurrences&bbox=-5881099.890046297,6504034.149305556,6709109.890046297,9544055.850694444&MAXFEATURES=500&outputFormat=kml'
+  metadata:
+    title: 'Greenland Mineral Occurrence Map'
+    abstract: 'The Geological Survey of Denmark and Greenland  Greenland mineral occurrence dataset is stored in the national databank in GEUS.'
+    citation:
+      text: 'The Greenland mineral occurrence dataset is maintained and updated by the Dept. of Economic Geology and Petrology, GEUS relevant for mineral resource exploration in Greenland.'
+      url: 'https://data.geus.dk/greenlanddb/webresources/dodex-report-file/released-report/28819'
+
+
 - id: background
   access_method: http
   sources:

@@ -129,6 +129,16 @@
   override_source_projection: 'ESRI:102018'
 
 
+- id: mineral_occurrences
+  data_source: mineral_occurrences.only
+  ingest_task: minerals
+  file_type: '.shp'
+  data_type: 'vector'
+  title: 'Greenland Mineral Occurrence Map'
+  visible: False
+  group_path: 'Geology & natural resources'
+
+
 ############
 # BASEMAPS #
 ############

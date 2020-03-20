@@ -1,4 +1,5 @@
 import os
+import subprocess
 
 import luigi
 
@@ -42,3 +43,26 @@ class SubsetShapefile(LayerTask):
         with temporary_path_dir(self.output()) as temp_path:
             fn = os.path.join(temp_path, self.filename)
             subset_shapefile(shapefile, layer_cfg=self.layer_cfg, outfile=fn)
+
+
+class KmlToShp(LayerTask):
+    task_type = TaskType.WIP
+
+    def output(self):
+        return luigi.LocalTarget(f'{self.outdir}/convert/')
+
+    def run(self):
+        kml = find_single_file_by_ext(self.input().path, ext='.kml')
+        with temporary_path_dir(self.output()) as temp_path:
+            fn = os.path.join(temp_path, self.filename)
+
+            # convert kml to shapefile.
+            cmd = f". activate base && ogr2ogr -f 'ESRI Shapefile' {fn} {kml}"
+
+            result = subprocess.run(cmd,
+                                    shell=True,
+                                    executable='/bin/bash',
+                                    capture_output=True)
+
+            if result.returncode != 0:
+                raise RuntimeError(result.stderr)
