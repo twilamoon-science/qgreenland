@@ -1,5 +1,6 @@
 """common.py: Tasks that could apply to any type of dataproduct."""
 import os
+import re
 import zipfile
 
 import luigi
@@ -29,12 +30,18 @@ class Unrar(Decompress):
 
 class Unzip(Decompress):
     def run(self):
+        default_filename_pattern = '.*'
+        unzip_kwargs = self.layer_cfg.get('unzip_kwargs', {})
+        pattern = unzip_kwargs.get('filename_pattern', default_filename_pattern)
+        regex = re.compile(pattern)
+
         zf_path = find_single_file_by_ext(self.input().path, ext='.zip')
         zf = zipfile.ZipFile(zf_path)
 
         with temporary_path_dir(self.output()) as temp_path:
             for fn in zf.namelist():
-                zf.extract(fn, temp_path)
+                if regex.match(fn):
+                    zf.extract(fn, temp_path)
             zf.close()
 
 

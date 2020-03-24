@@ -1,9 +1,24 @@
+- id:  murre_colonies
+  access_method: http
+  sources:
+    - id: only
+      urls:
+        - url: 'https://abds.is/index.php/publications/the-distribution-of-thick-billed-and-common-murre-colonies-in-the-north/download'
+          output_filename: download.zip
+  metadata:
+    title: 'The distribution of thick-billed and common murre colonies in the North.'
+    abstract: 'The distribution of thick-billed and common murre colonies in the North.'
+    citation:
+      text: 'Conservation of Arctic Flora and Fauna'
+      url: 'https://caff.is/usage-policy-and-copyright-information'
+
+
 - id: background
   access_method: http
   sources:
     - id: only
       urls:
-        - 'https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/raster/NE2_LR_LC_SR_W.zip'
+        - url: 'https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/raster/NE2_LR_LC_SR_W.zip'
   metadata:
     title: 'Natural Earth II with Shaded Relief and Water (10m)'
     abstract: 'Natural Earth II (Public Domain)'
@@ -17,7 +32,7 @@
   sources:
     - id: only
       urls:
-        - 'https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_populated_places_simple.zip'
+        - url: 'https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_populated_places_simple.zip'
   metadata:
     title: 'Natural Earth Populated Places (10m)'
     abstract: 'Natural Earth Populated Places (Public Domain)'
@@ -31,7 +46,7 @@
   sources:
     - id: only
       urls:
-        - 'https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/physical/ne_10m_coastline.zip'
+        - url: 'https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/physical/ne_10m_coastline.zip'
   metadata:
     title: 'Natural Earth Coastlines (10m)'
     abstract: 'Natural Earth Coastlines (Public Domain)'
@@ -45,7 +60,7 @@
   sources:
     - id: only
       urls:
-        - 'https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/physical/ne_10m_land.zip'
+        - url: 'https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/physical/ne_10m_land.zip'
   metadata:
     title: 'Natural Earth Land (10m)'
     abstract: 'Natural Earth Land (Public Domain)'
@@ -62,7 +77,7 @@
 #   sources:
 #     - id: only
 #       urls:
-#         - 'https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/physical/ne_10m_ocean.zip'
+#         - url: 'https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/physical/ne_10m_ocean.zip'
 #   metadata:
 #     title: 'Natural Earth Ocean (10m)'
 #     abstract: 'Natural Earth Ocean (Public Domain)'
@@ -76,7 +91,7 @@
   sources:
     - id: only
       urls:
-        - 'http://data.pgc.umn.edu/elev/dem/setsm/ArcticDEM/mosaic/v3.0/1km/arcticdem_mosaic_1km_v3.0.tif'
+        - url: 'http://data.pgc.umn.edu/elev/dem/setsm/ArcticDEM/mosaic/v3.0/1km/arcticdem_mosaic_1km_v3.0.tif'
   metadata:
     title: 'Arctic DEM (1km mosaic)'
     abstract: 'ArcticDEM is an NGA-NSF public-private initiative to automatically produce a high-resolution, high quality, digital surface model (DSM) of the Arctic using optical stereo imagery, high-performance computing, and open source photogrammetry software.'
@@ -103,7 +118,7 @@
   sources:
     - id: only
       urls:
-        - 'http://its-live-data.jpl.nasa.gov.s3.amazonaws.com/velocity_mosaic/landsat/v00.0/static/GRE_G0120_0000.nc'
+        - url: 'http://its-live-data.jpl.nasa.gov.s3.amazonaws.com/velocity_mosaic/landsat/v00.0/static/GRE_G0120_0000.nc'
   metadata:
     title: 'Regional Glacier and Ice Sheet Surface Velocities'
     abstract: 'The Inter-mission Time Series of Land Ice Velocity and Elevation (ITS_LIVE) project facilitates ice sheet, ice shelf and glacier research by providing a globally comprehensive and temporally dense multi-sensor record of land ice velocity and elevation with low latency.'
@@ -146,7 +161,7 @@
   sources:
     - id: only
       urls:
-        - 'https://daacdata.apps.nsidc.org/pub/DATASETS/parca/nsidc-0371-hydrologic-sub-basins/Greenland_Hydrologic_Sub_Basins.rar'
+        - url: 'https://daacdata.apps.nsidc.org/pub/DATASETS/parca/nsidc-0371-hydrologic-sub-basins/Greenland_Hydrologic_Sub_Basins.rar'
   metadata:
     title: 'Hydrologic Sub-basins of Greenland, Version 1'
     abstract: "The Hydrologic Sub-basins of Greenland data set contains Geographic Information System (GIS) polygon shapefiles that include 293 hydrologic sub-basins of the Greenland Ice Sheet, as created by Lewis and Smith (2009). Five km Digital Elevation Models (DEMs) of ice-surface and bedrock topography (Bamber et al. 2001) were used to estimate the hydraulic potentiometric surface for Greenland, which accounts for the effects of ice overburden pressure, such as hydrostatic pressure, surface topography, and underlying bedrock topography (Paterson 1994). Using the 5 km potentiometric grid, a modeled basin network for Greenland's ice sheet was created using the hydrological tools within ESRI ArcGIS (ArcInfo 9.2). Although the GIS initially generated more than 293 basins, basins less than 100 km2 in size, as well as basins located completely outside of the ice sheet extent, were removed from the data set."

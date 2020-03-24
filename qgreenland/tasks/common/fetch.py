@@ -53,11 +53,16 @@ class FetchDataFiles(luigi.Task):
             raise RuntimeError('Use a FetchCmrGranule task!')
 
         with temporary_path_dir(self.output()) as temp_path:
-            for url in self.source_cfg['urls']:
+            for url_cfg in self.source_cfg['urls']:
+                url = url_cfg['url']
                 resp = fetch_file(url)
 
-                url_slash_index = resp.url.rfind('/')
-                fn = resp.url[url_slash_index + 1:]
+                if 'output_filename' in url_cfg:
+                    fn = url_cfg['output_filename']
+                else:
+                    url_slash_index = resp.url.rfind('/')
+                    fn = resp.url[url_slash_index + 1:]
+
                 fp = os.path.join(temp_path, fn)
 
                 with open(fp, 'wb') as f:

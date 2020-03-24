@@ -13,5 +13,7 @@ INGEST_TASKS = {
     'glacier_terminus': GlacierTerminus,
     'rarred_shapefile': RarredShapefile,
     'velocity_mosaic': VelocityMosaic,
-    'zipped_shapefile': ZippedShapefile
+    'zipped_shapefile': ZippedShapefile,
+    'common_murre_colonies': ZippedShapefile,
+    'thick_billed_murre_colonies': ZippedShapefile
 }

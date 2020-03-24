@@ -45,7 +45,7 @@ def find_single_file_by_ext(path, *, ext):
     try:
         return files[0]
     except IndexError:
-        raise RuntimeError(f"No files with extension '{ext}' found at '{path}'")
+        raise FileNotFoundError(f"No files with extension '{ext}' found at '{path}'")
 
 
 @contextmanager

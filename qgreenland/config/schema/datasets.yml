@@ -16,7 +16,7 @@ source:
   # A granule corresponds to n >= 1 files
   granule_ur: str(required=False)
   # If a granule_ur isn't provided, provide a list of files instead
-  urls: list(str(), required=False)
+  urls: list(include('urls'), required=False)
 
   # TODO: Override default filename? By default, the filename from the URL is used
   # base_filename: str(required=False)
@@ -29,3 +29,8 @@ metadata:
   citation:
     text: str()
     url: str()
+
+---
+urls:
+  url: str()
+  output_filename: str(required=False)
