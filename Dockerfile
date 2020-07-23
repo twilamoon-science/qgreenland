@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y libgl1-mesa-glx unrar
 # TODO install to `qgreenland` specific environment. Activate in Dockerfile if
 # possible.
 COPY environment-lock.yml .
-RUN conda env update -f environment-lock.yml -n base
+RUN conda env create -f environment-lock.yml
 
 # Use this method to install to non-root? Need to edit luigid.sh...
 # COPY environment.yml .
@@ -23,3 +23,5 @@ WORKDIR /luigi
 # gets populated. Additionally, /luigi/tasks is where we expect python code to
 # be mounted.
 ENV PYTHONPATH /luigi/tasks:/opt/conda/share/qgis/python/plugins:/opt/conda/share/qgis/python
+
+ENV CONDA_DEFAULT_ENV qgreenland

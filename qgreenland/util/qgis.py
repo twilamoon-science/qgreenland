@@ -1,5 +1,6 @@
 import os
 import tempfile
+import warnings
 
 import qgis.core as qgc
 from jinja2 import Template
@@ -179,6 +180,15 @@ def _add_empty_groups(project):
         _get_or_create_group(project, group_path)
 
 
+def _set_qgis_application_path():
+    if 'CONDA_PREFIX' in os.environ and os.environ['CONDA_PREFIX']:
+        qgc.QgsApplication.setPrefixPath(os.environ['CONDA_PREFIX'], True)
+        return
+
+    warnings.warn(
+        "Could not set QGIS application path from expected 'CONDA_PREFIX' envvar."
+    )
+
 def make_qgis_project_file(path):
     """Create a QGIS project file with the correct stuff in it.
 
@@ -189,6 +199,8 @@ def make_qgis_project_file(path):
 
         https://docs.qgis.org/testing/en/docs/pyqgis_developer_cookbook/intro.html#using-pyqgis-in-standalone-scripts
     """
+    _set_qgis_application_path()
+
     project = qgc.QgsProject.instance()
 
     # Create a new project; initializes basic structure
