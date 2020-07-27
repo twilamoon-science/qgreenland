@@ -6,6 +6,9 @@ from qgreenland.tasks.layers.rarred_shapefile import RarredShapefile
 from qgreenland.tasks.layers.velocity_mosaic import VelocityMosaic
 from qgreenland.tasks.layers.zipped_shapefile import ZippedShapefile
 
+# TODO: Replace mapping with programmatic lookup. Either take exact
+# strings and look it up in the available imported modules, or
+# programmatically convert snake/camel case?
 INGEST_TASKS = {
     'arctic_dem': ArcticDEM,
     'background_image': BackgroundImage,
