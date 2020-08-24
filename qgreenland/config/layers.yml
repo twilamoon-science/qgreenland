@@ -276,8 +276,10 @@
 - id: permaice
   title: 'Permafrost and Ground-Ice (12.5km)'
   description: >-
-      Soil characteristics categorized by permafrost extent, ground ice content,
-      overburden thickness, and exposed bedrock.
+      Soil characteristics categorized by permafrost extent, ground ice
+      content, overburden thickness, and exposed bedrock.
+
+      WARNING: This layer may have geolocation issues.
   visible: False
   group_path: 'Frozen ground'
   style: 'permaice'
@@ -369,7 +371,10 @@
 
 - id: velocity_mosaic
   title: 'Ice Sheet Velocity (500m)'
-  description: 'Magnitude of velocity in meters per year.'
+  description: >-
+      Magnitude of velocity in meters per year.
+
+      WARNING: This layer may have geolocation issues.
   visible: False
   group_path: 'Glaciology/Ice sheet velocity'
   style: 'ice_sheet_velocity'
@@ -745,7 +750,11 @@
 - &bedmachine
   id: bedmachine_bed
   title: 'Bedrock Elevation (1km)'
-  description: 'Bedrock elevation in meters. Source is mass conservation (Mathieu Morlighem).'
+  description: >-
+      Bedrock elevation in meters. Source is mass conservation (Mathieu
+      Morlighem).'
+
+      WARNING: This layer may have geolocation issues.
   visible: True
   group_path: 'Terrain models/BedMachine'
   style: 'bedmachine_bed'
@@ -787,7 +796,10 @@
 
 - id: arctic_dem
   title: 'Arctic DEM (1km)'
-  description: 'Surface elevation in meters.'
+  description: >-
+      Surface elevation in meters.
+
+      WARNING: This layer may have geolocation issues.
   visible: False
   group_path: 'Terrain models'
   style: 'arctic_dem'
@@ -868,6 +880,8 @@
       Bedrock elevation in meters. Elevations can be assumed to be relative to
       Mean Sea Level. However, in some shallow water areas, the grids include
       data from sources having a vertical datum other than mean sea level.
+
+      WARNING: This layer may have geolocation issues.
   visible: False
   group_path: 'Oceanography'
   style: 'ibcao_bathymetry'
