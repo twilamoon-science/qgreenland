@@ -22,6 +22,9 @@ A plugin could work as follows:
 * from the entry the user will be able to download either the full data package, or if useful some subset of it
 * the plugin can also add some specific tools to make life easier to user
 * it will also provide the essential documentation, plus a link to the full docs
+Possible sources:
+* https://plugins.qgis.org/plugins/swissgeodownloader/
+
 
 ## Option: WebGIS
 
