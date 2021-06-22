@@ -20,6 +20,7 @@ TBD: suggest further improvements (if any) to styling and general usability
 A plugin could work as follows:
 * the plugin adds an entry to one of the menus (possibly "Web")
 * from the entry the user will be able to download either the full data package, or if useful some subset of it
+* the plugin can download the data and apply the style if any
 * the plugin can also add some specific tools to make life easier to user
 * it will also provide the essential documentation, plus a link to the full docs
 
