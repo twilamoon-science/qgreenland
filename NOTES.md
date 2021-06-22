@@ -2,7 +2,7 @@
 
 ## Logistics
 
-* meetings: 8 h diff, so proposed time is 5pm IT=7am US
+* meetings: 8 h diff, so proposed time is 4pm IT=8am US
 
 ## Possible improvements of the project
 
