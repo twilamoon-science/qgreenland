@@ -11,6 +11,7 @@
 * replace meteo data with grib or similar?
 * reduce the number of classes in legend? e.g. seawater temperature
 * avoid the "too many open files" issue
+* add support for satellite imagery (e.g. Copernicus)
 
 TBD: suggest further improvements (if any) to styling and general usability
 
